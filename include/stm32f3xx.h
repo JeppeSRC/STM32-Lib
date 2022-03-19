@@ -1,7 +1,7 @@
 /**
 MIT License
 
-Copyright (c) 2021 Jesper
+Copyright (c) 2022 Jesper
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,63 +24,42 @@ SOFTWARE.
 
 #pragma once
 
+#include "common.h"
+
+// AHB3
+
 // AHB2
-#define GPIOF_ADDR 0x48001400
-#define GPIOE_ADDR 0x48001000
-#define GPIOD_ADDR 0x48000C00
-#define GPIOC_ADDR 0x48000800
-#define GPIOB_ADDR 0x48000400
-#define GPIOA_ADDR 0x48000000
+#define GPIOF_ADDR          0x48001400
+#define GPIOD_ADDR          0x48000C00
+#define GPIOC_ADDR          0x48000800
+#define GPIOB_ADDR          0x48000400
+#define GPIOA_ADDR          0x48000000
 
-//AHB1
-#define TSC_ADDR     0x40024000
-#define CRC_ADDR     0x40023000
-#define FLASH_ADDR   0x40022000
-#define RCC_ADDR     0x40021000
-#define DMA2_ADDR    0x40020400
-#define DMA1_ADDR    0x40020000
+//AHB1  
+#define TSC_ADDR            0x40024000
+#define CRC_ADDR            0x40023000
+#define FLASH_ADDR          0x40022000
+#define RCC_ADDR            0x40021000
+#define DMA1_ADDR           0x40020000
 
-//APB2
-#define SDADC3_ADDR         0x40016800
-#define SDADC2_ADDR         0x40016400
-#define SDADC1_ADDR         0x40016000
-#define TIM19_ADDR          0x40015C00
+//APB2  
 #define TIM17_ADDR          0x40014800
 #define TIM16_ADDR          0x40014400
 #define TIM15_ADDR          0x40014000
 #define USART1_ADDR         0x40013800
-#define SPI1_ADDR           0x40013000
-#define I2S1_ADDR           SPI1_ADDR
-#define ADC_ADDR            0x40012400
 #define EXTI_ADDR           0x40010400
-#define SYSCFG_COMP_ADDR    0x40010000
+#define SYSCFG_ADDR         0x40010000
+#define COMP_ADDR           0x40010000
+#define OPAMP_ADDR          0x40010000
 
-//APB1
-#define TIM18_ADDR      0x40009C00
-#define DAC2_ADDR       0x40009800
-#define CEC_ADDR        0x40007800
-#define DAC1_ADDR       0x40007400
-#define PWR_ADDR        0x40007000
-#define CAN_ADDR        0x40006400
-#define USB_SRAM_ADDR   0x40006000
-#define USB_ADDR        0x40005C00
-#define I2C2_ADDR       0x40005800
-#define I2C1_ADDR       0x40005400
-#define USART3_ADDR     0x40004800
-#define USART2_ADDR     0x40004400
-#define SPI3_ADDR       0x40003C00
-#define I2S3_ADDR       SPI3_ADDR
-#define SPI2_ADDR       0x40003800
-#define I2S2_ADDR       SPI2_ADDR
-#define IWDG_ADDR       0x40003000
-#define WWDG_ADDR       0x40002C00
-#define RTC_ADDR        0x40002800
-#define TIM14_ADDR      0x40002000
-#define TIM13_ADDR      0x40001C00
-#define TIM12_ADDR      0x40001800
-#define TIM7_ADDR       0x40001400
-#define TIM6_ADDR       0x40001000
-#define TIM5_ADDR       0x40000C00
-#define TIM4_ADDR       0x40000800
-#define TIM3_ADDR       0x40000400
-#define TIM2_ADDR       0x40000000
+//APB1  
+#define DAC1_ADDR           0x40007400
+#define PWR_ADDR            0x40007000
+#define I2C1_ADDR           0x40005400
+#define USART3_ADDR         0x40004800
+#define USART2_ADDR         0x40004400
+#define IWDG_ADDR           0x40003000
+#define WWDG_ADDR           0x40002C00
+#define RTC_ADDR            0x40002800
+#define TIM6_ADDR           0x40001000
+#define TIM2_ADDR           0x40000000

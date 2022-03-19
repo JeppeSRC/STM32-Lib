@@ -1,7 +1,7 @@
 /**
 MIT License
 
-Copyright (c) 2021 Jesper
+Copyright (c) 2022 Jesper
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,10 +24,14 @@ SOFTWARE.
 
 #pragma once
 
-#define SRAM_ADDR  0x20000000
+#define SRAM_ADDR           0x20000000
+#define OPTIONS_ADDR        0x1FFFF800
+#define SYSMEMORY_ADDR      0x1FFFD800
+#define FLASHMEMORY_ADDR    0x08000000
 
-#define SYSTIMER_ADDR   0xE000E010
-#define NVIC_ADDR       0xE000E100
-#define SCB_ADDR        0xE000ED00
-#define MPU_ADDR        0xE000ED90
-#define FPU_ADDR        0xE000EF30
+#define SYSTIMER_ADDR       0xE000E010
+#define NVIC_ADDR           0xE000E100
+#define SCB_ADDR            0xE000ED00
+#define MPU_ADDR            0xE000ED90
+#define FPU_ADDR            0xE000EF30
+
