@@ -26,24 +26,36 @@ SOFTWARE.
 
 #include "stm32f3xx.h"
 
+// AHB4
+#define FMC_CTRL_ADDR       0xA0000000
+#define FMC_BANK34_ADDR     0x80000000
+#define FMC_BANK12_ADDR     0x60000000
+
 // AHB3
 #define ADC1_ADDR           0x50000000
 #define ADC2_ADDR           0x50000100
 #define ADC12_ADDR          0x50000300
-
+    
 // AHB2 
-
+#define GPIOH_ADDR          0x48001C00
+#define GPIOG_ADDR          0x48001800
+#define GPIOE_ADDR          0x48001000
+    
 // AHB1 
-
+#define DMA2_ADDR           0x40020400
+    
 // APB2 
+#define SPI4_ADDR           0x40013C00
 #define SPI1_ADDR           0x40013000
 #define OPAMP_ADDR          0x40010000
 #define TIM1_ADDR           0x40012C00
-
+    
 // APB1 
-#define DAC2_ADDR           0x40009800
 #define CAN_ADDR            0x40006400
-#define TIM7_ADDR           0x40001400
+#define USB_SRAM_ADDR       0x40006000
+#define USB_ADDR            0x40005C00
+#define I2C2_ADDR           0x40005800
+#define USART5              0x40005000
+#define USART4              0x40004C00
+#define TIM4_ADDR           0x40000800
 #define TIM3_ADDR           0x40000400
-
-#define CCM_SRAM_ADDR       0x10000000

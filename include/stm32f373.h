@@ -27,12 +27,6 @@ SOFTWARE.
 #include "stm32f3xx.h"
 
 // AHB3
-#undef ADC1_ADDR            0x50000000
-#undef ADC2_ADDR            0x50000100
-#undef ADC12_ADDR           0x50000300
-#undef ADC3_ADDR            0x50000400
-#undef ADC4_ADDR            0x50000500
-#undef ADC34_ADDR           0x50000700
 
 // AHB2
 #define GPIOE_ADDR          0x48001000
