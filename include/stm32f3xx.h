@@ -25,6 +25,7 @@ SOFTWARE.
 #pragma once
 
 #include "common.h"
+#include "peripherals/gpio.h"
 
 // AHB3
 
@@ -63,3 +64,15 @@ SOFTWARE.
 #define RTC_ADDR            0x40002800
 #define TIM6_ADDR           0x40001000
 #define TIM2_ADDR           0x40000000
+
+//GPIO registers
+#define GPIO_MODER_ADDR     0x00
+#define GPIO_OTYPER_ADDR    0x04
+#define GPIO_OSPEEDR_ADDR   0x08
+#define GPIO_PUPDR_ADDR     0x0C
+#define GPIO_IDR_ADDR       0x10
+#define GPIO_ODR_ADDR       0x14
+#define GPIO_BSRR_ADDR      0x18
+#define GPIO_LCKR_ADDR      0x1C
+#define GPIO_AFRL_ADDR      0x20
+#define GPIO_AFRH_ADDR      0x24

@@ -31,11 +31,11 @@ SOFTWARE.
 #define ADC2_ADDR           0x50000100
 #define ADC12_ADDR          0x50000300
 
-// AHB2         
+// AHB2
 
-// AHB1         
+// AHB1
 
-// APB2         
+// APB2
 #define SPI1_ADDR           0x40013000
 #define OPAMP_ADDR          0x40010000
 #define TIM1_ADDR           0x40012C00
