@@ -1,0 +1,45 @@
+!FuckMake
+
+CC=arm-none-eabi-gcc
+AS=arm-none-eabi-as
+LD=%(CC)
+
+INC=-Iinclude
+
+CFiles=GetFiles(src/,*.c,)
+ASMFiles=GetFiles(src/,*.asm,)
+
+ObjDir=bin/obj/
+
+AFLAGS = -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16
+CFLAGS = %(AFLAGS) -flto -O3 -Wno-unknown-pragmas -Wno-nonnull-compare -Wall -Wno-builtin-declaration-mismatch -fno-exceptions -fdata-sections -ffunction-sections -Wno-uninitialized
+LFLAGS = %(CFLAGS) -nostartfiles -nodefaultlibs -nostdlib -Wl,--gc-sections --specs=nosys.specs -T"LinkerScript.ld"
+
+Assemble {
+    Msg(Assembling %Input)
+    !%(CC) %(AFLAGS) -xassembler-with-cpp %(INC) -c -o %Output %Input
+}
+
+Compile {
+    Msg(Compiling %Input)
+    !%(CC) %(CFLAGS) %(LFLAGS) %(INC) -DSTM32LIB_REG_IMPL -c -o %Output %Input
+}
+
+Link {
+    Msg(Linking %Output)
+    !%(LD) %(LFLAGS) -o %Output %Input
+}
+
+build:
+    Msg(Building)
+    ExecuteList(Assemble, %(ASMFiles), %(ObjDir))
+    ExecuteList(Compile, %(CFiles), %(ObjDir), %(INC))
+    Execute(Link, GetFiles(%(ObjDir),*.obj,), %(ObjDir)test.elf)
+
+rebuild:
+    ExecuteTarget(clean)
+    ExecuteTarget(build)
+
+clean:
+    Msg(Cleaning)
+    DeleteFiles(GetFiles(%(ObjDir),*.obj,))

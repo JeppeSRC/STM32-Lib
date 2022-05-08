@@ -26,6 +26,7 @@ SOFTWARE.
 
 #include "common.h"
 #include "peripherals/gpio.h"
+#include "peripherals/flash.h"
 
 // AHB3
 
@@ -76,3 +77,16 @@ SOFTWARE.
 #define GPIO_LCKR_ADDR      0x1C
 #define GPIO_AFRL_ADDR      0x20
 #define GPIO_AFRH_ADDR      0x24
+
+//TODO: TSC
+//TODO: CRC
+
+//FLASH registers
+#define FLASH_ACR_ADDR      0x00
+#define FLASH_KEYR_ADDR     0x04
+#define FLASH_OPTKEYR_ADDR  0x08
+#define FLASH_SR_ADDR       0x0C
+#define FLASH_CR_ADDR       0x10
+#define FLASH_AR_ADDR       0x14
+#define FLASH_OBR_ADDR      0x1C
+#define FLASH_WRPR_ADDR     0x20

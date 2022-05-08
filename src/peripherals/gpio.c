@@ -36,7 +36,7 @@ uint32 read(volatile void* addr, uint32 offset) {
 
 //MODER
 
-void GPIO_SetMode(volatile void* addr, uint32 portModes) {
+void GPIO_SetModes(volatile void* addr, uint32 portModes) {
     write(addr, GPIO_MODER_ADDR, portModes);
 }
 
@@ -46,7 +46,7 @@ void GPIO_SetPortMode(volatile void* addr, uint8 port, uint8 mode) {
     write(addr, GPIO_MODER_ADDR, (v & ~GPIO_MODER(port, 0xFF)) | GPIO_MODER(port, mode));
 }
 
-uint32 GPIO_ReadMode(volatile void* addr) {
+uint32 GPIO_ReadModes(volatile void* addr) {
     return read(addr, GPIO_MODER_ADDR);
 }
 
@@ -58,7 +58,7 @@ uint8 GPIO_ReadPortMode(volatile void* addr, uint8 port) {
 
 //OTYPER
 
-void GPIO_SetOutputMode(volatile void* addr, uint32 portModes) {
+void GPIO_SetOutputModes(volatile void* addr, uint32 portModes) {
     write(addr, GPIO_OTYPER_ADDR, portModes);
 }
 
@@ -68,7 +68,7 @@ void GPIO_SetPortOutputMode(volatile void* addr, uint8 port, uint8 mode) {
     write(addr, GPIO_OTYPER_ADDR, (v & ~GPIO_OTYPER(port, 0xFF)) | GPIO_OTYPER(port, mode));
 }
 
-uint32 GPIO_ReadOutputMode(volatile void* addr) {
+uint32 GPIO_ReadOutputModes(volatile void* addr) {
     return read(addr, GPIO_OTYPER_ADDR);
 }
 
@@ -80,7 +80,7 @@ uint8 GPIO_ReadPortOutputMode(volatile void* addr, uint8 port) {
 
 //OSPEEDR
 
-void GPIO_SetSpeed(volatile void* addr, uint32 portSpeeds) {
+void GPIO_SetSpeeds(volatile void* addr, uint32 portSpeeds) {
     write(addr, GPIO_OSPEEDR_ADDR, portSpeeds);
 }
 
@@ -90,7 +90,7 @@ void GPIO_SetPortSpeed(volatile void* addr, uint8 port, uint8 mode) {
     write(addr, GPIO_OSPEEDR_ADDR, (v & ~GPIO_OSPEEDR(port, 0xFF)) | GPIO_OSPEEDR(port, mode));
 }
 
-uint32 GPIO_ReadSpeed(volatile void* addr) {
+uint32 GPIO_ReadSpeeds(volatile void* addr) {
     return read(addr, GPIO_OSPEEDR_ADDR);
 }
 
@@ -146,7 +146,7 @@ void GPIO_WritePort(volatile void* addr, uint8 port, uint8 state) {
     write(addr, GPIO_ODR_ADDR, (v & ~GPIO_ODR(port, 0xFF)) | GPIO_ODR(port, state));
 }
 
-uint32 GPIO_ReadOutput(volatile void* addr) {
+uint32 GPIO_ReadOutputs(volatile void* addr) {
     return read(addr, GPIO_ODR_ADDR);
 }
 
@@ -182,7 +182,7 @@ void GPIO_Lock(volatile void* addr) {
     write(addr, GPIO_LCKR_ADDR, 0x10000);
 }
 
-void GPIO_SetLock(volatile void* addr, uint32 data) {
+void GPIO_SetLocks(volatile void* addr, uint32 data) {
     write(addr, GPIO_LCKR_ADDR, data & 0xFFFF);
 }
 
@@ -194,7 +194,7 @@ uint8 GPIO_Locked(volatile void* addr) {
     return GPIO_LCKR_READ(16, read(addr, GPIO_LCKR_ADDR));
 }
 
-uint32 GPIO_ReadLock(volatile void* addr) {
+uint32 GPIO_ReadLocks(volatile void* addr) {
     return read(addr, GPIO_LCKR_ADDR);
 }
 
@@ -206,7 +206,7 @@ uint8 GPIO_ReadPortPort(volatile void* addr, uint8 port) {
 
 //ADR
 
-void GPIO_SetAlternateMode(volatile void* addr, uint64 portModes) {
+void GPIO_SetAlternateModes(volatile void* addr, uint64 portModes) {
     write(addr, GPIO_AFRL_ADDR, (uint32)(portModes & 0xFFFFFFFF));
     write(addr, GPIO_AFRH_ADDR, (uint32)((portModes >> 32) & 0xFFFFFFFF));
 }
@@ -219,7 +219,7 @@ void GPIO_SetPortAlternateMode(volatile void* addr, uint8 port, uint8 mode) {
     }
 }
 
-uint64 GPIO_ReadAlternateMode(volatile void* addr) {
+uint64 GPIO_ReadAlternateModes(volatile void* addr) {
     uint32 vl = read(addr, GPIO_AFRL_ADDR);
     uint32 vh = read(addr, GPIO_AFRH_ADDR);
     

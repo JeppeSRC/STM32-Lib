@@ -46,9 +46,9 @@ SOFTWARE.
 #define GPIO_MODER(port, mode) ((mode & 0x03) << ((port) << 1))
 #define GPIO_MODER_READ(port, data) ((data >> ((port) << 1)) & 0x3)
 
-void    GPIO_SetMode(volatile void* addr, uint32 portModes);
+void    GPIO_SetModes(volatile void* addr, uint32 portModes);
 void    GPIO_SetPortMode(volatile void* addr, uint8 port, uint8 mode);
-uint32  GPIO_ReadMode(volatile void* addr);
+uint32  GPIO_ReadModes(volatile void* addr);
 uint8   GPIO_ReadPortMode(volatile void* addr, uint8 port);
 
 ///////////////////////////////////////////////////////////////////////
@@ -68,9 +68,9 @@ uint8   GPIO_ReadPortMode(volatile void* addr, uint8 port);
 #define GPIO_OTYPER(port, mode) ((mode & 0x01) << (port))
 #define GPIO_OTYPER_READ(port, data) ((data >> (port)) & 0x1)
 
-void    GPIO_SetOutputMode(volatile void* addr, uint32 portModes);
+void    GPIO_SetOutputModes(volatile void* addr, uint32 portModes);
 void    GPIO_SetPortOutputMode(volatile void* addr, uint8 port, uint8 mode);
-uint32  GPIO_ReadOutputMode(volatile void* addr);
+uint32  GPIO_ReadOutputModes(volatile void* addr);
 uint8   GPIO_ReadPortOutputMode(volatile void* addr, uint8 port);
 
 ///////////////////////////////////////////////////////////////////////
@@ -92,9 +92,9 @@ uint8   GPIO_ReadPortOutputMode(volatile void* addr, uint8 port);
 #define GPIO_OSPEEDR(port, mode) GPIO_MODER(port, mode)
 #define GPIO_OSPEEDR_READ(port, data) GPIO_MODER_READ(port, data)
 
-void    GPIO_SetSpeed(volatile void* addr, uint32 portSpeeds);
+void    GPIO_SetSpeeds(volatile void* addr, uint32 portSpeeds);
 void    GPIO_SetPortSpeed(volatile void* addr, uint8 port, uint8 speed);
-uint32  GPIO_ReadSpeed(volatile void* addr);
+uint32  GPIO_ReadSpeeds(volatile void* addr);
 uint8   GPIO_ReadPortSpeed(volatile void* addr, uint8 port);
 
 ///////////////////////////////////////////////////////////////////////
@@ -153,7 +153,7 @@ uint8   GPIO_ReadPort(volatile void* addr, uint8 port);
 
 void    GPIO_Write(volatile void* addr, uint32 state);
 void    GPIO_WritePort(volatile void* addr, uint8 port, uint8 state);
-uint32  GPIO_ReadOutput(volatile void* addr);
+uint32  GPIO_ReadOutputs(volatile void* addr);
 uint8   GPIO_ReadPortOutput(volatile void* addr, uint8 port);
 
 ///////////////////////////////////////////////////////////////////////
@@ -191,10 +191,10 @@ void    GPIO_ResetPort(volatile void* addr, uint8 port);
 #define GPIO_LCKR_READ(port, data) ((data >> (port)) & 0x01)
 
 void    GPIO_Lock(volatile void* addr);
-void    GPIO_SetLock(volatile void* addr, uint32 data);
+void    GPIO_SetLocks(volatile void* addr, uint32 data);
 void    GPIO_SetPortLock(volatile void* addr, uint8 port);
 uint8   GPIO_Locked(volatile void* addr);
-uint32  GPIO_ReadLock(volatile void* addr);
+uint32  GPIO_ReadLocks(volatile void* addr);
 uint8   GPIO_ReadPortPort(volatile void* addr, uint8 port);
 
 ///////////////////////////////////////////////////////////////////////
@@ -211,9 +211,9 @@ uint8   GPIO_ReadPortPort(volatile void* addr, uint8 port);
 #define GPIO_AFR(port, mode) ((mode & 0x0F) << ((port) << 2))
 #define GPIO_AFR_READ(port, data) ((data >> ((port) << 2)) & 0x0F)
 
-void    GPIO_SetAlternateMode(volatile void* addr, uint64 portModes);
+void    GPIO_SetAlternateModes(volatile void* addr, uint64 portModes);
 void    GPIO_SetPortAlternateMode(volatile void* addr, uint8 port, uint8 mode);
-uint64  GPIO_ReadAlternateMode(volatile void* addr);
+uint64  GPIO_ReadAlternateModes(volatile void* addr);
 uint8   GPIO_ReadPortAlternateMode(volatile void* addr, uint8 port);
 
 ///////////////////////////////////////////////////////////////////////
